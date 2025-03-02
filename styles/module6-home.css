@@ -1,0 +1,139 @@
+        body {
+                background: #ffffff;
+            }
+		
+		img		{ 
+			max-width: 100%;
+			float: left;
+			padding-right: 1em; 
+		}
+		
+		nav a {
+			color: #ffffff;
+		}
+		
+		main a {
+			color: #300348;
+		}
+		
+		
+		header {
+            grid-area: header;
+			color: #ffffff;
+            background: url("../images/bokeh-313993_blend.jpg"), #0e0115;
+			/* I tried to use this background image instead of a background color, but it throws off color contrast errors in the Wave accessibility checker (text and background register as the same color) I think it is because the background image is not seen as a color. My brother also mentioned that it would be a problem if the image did not load for some reason, so he recommended adding a backround color along with the background image. */
+			text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+			color: #ffffff;
+            background-color: #300348;
+			padding: 0 .75em;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #ecccfd;
+			padding: 0 1.5em;
+        }
+
+        aside {
+            grid-area: aside;
+            color: #ffffff;
+            background-color: #300348;
+			padding: 0 .75em;
+
+        }
+
+        footer {
+            grid-area: footer;
+            color: #ffffff;
+			background: url("../images/bokeh-313993_blend.jpg"), #0e0115;
+			padding-left: 1.5em;
+			text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'nav nav main main main aside'
+                'nav nav main main main aside'
+                'nav nav main main main aside'
+				'footer footer footer footer footer footer';
+			
+			max-width: 74em;
+			margin: auto;
+        }
+
+
+        ul li {
+            list-style-type: none;
+        }
+		
+		ul {
+            padding-left: 0;
+        }
+
+
+        /*FIRST BREAK POINT === tablet */
+        @media only screen and (max-width : 900px) {
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'header header header header header header'
+					'nav nav nav nav nav nav'
+                    'main main main main aside aside'
+                    'footer footer footer footer footer footer';
+            }
+
+            nav ul li {
+                display: inline-block;
+            }
+
+        }
+
+        /*SECOND BREAK POINT === mobile */
+        @media only screen and (max-width : 600px) {
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'nav nav nav nav nav nav'
+                    'header header header header header header'
+                    'main main main main main main'
+                    'aside aside aside aside aside aside'
+                    'footer footer footer footer footer footer';
+            }
+
+            nav ul li {
+                display: inline-block;
+            }
+			
+			nav {
+				padding-left: 1.5em;
+			}
+			
+			aside {
+				padding-left: 1.5em;
+			}
+			
+			img {
+				float: none;
+				max-width: 155px;
+			}
+			
+			.center {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 50%;
+				}
+			
+			footer {
+				padding: 0;
+			}
+
+        }

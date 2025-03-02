@@ -1,0 +1,119 @@
+        body {
+                background: #ffffff;
+            }
+		
+		
+		nav a {
+			color: #ffffff;
+		}
+		
+		
+		header {
+            grid-area: header;
+			color: #ffffff;
+            background-color: #000000;
+			text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+			color: #ffffff;
+            background-color: #404040;
+			padding: 0 .75em;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #f2f2f2;
+			padding: 0 1.5em;
+        }
+
+        aside {
+            grid-area: aside;
+            color: #ffffff;
+            background-color: #f2f2f2;
+        }
+		
+		footer {
+            grid-area: footer;
+            color: #ffffff;
+			background-color: #000000;
+			padding-left: 1.5em;
+			text-align: center;
+        }		
+	
+		.iframe {
+			text-align: center;
+		}
+		
+		.radio-player		{ 
+			/* This widget provided by Live365 is not built to be responsive; they give large, medium, and small options with fixed settings. I removed the fixed settings, but I set a minimum height because anything smaller than 614px cuts off the lower information, causing a vertical scroll bar on the player. The original code is as follows:
+				<iframe width="300" height="614" frameborder="0" src="https://live365.com/embeds/v1/player/a07944?s=sm&m=dark&c=mp3"></iframe> */
+			min-height:614px;
+		}
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'nav nav main main aside aside'
+                'nav nav main main aside aside'
+                'nav nav main main aside aside'
+				'footer footer footer footer footer footer';
+			
+			max-width: 74em;
+			margin: auto;
+        }
+
+
+        ul li {
+            list-style-type: none;
+        }
+		
+		ul {
+            padding-left: 0;
+        }
+
+
+        /*FIRST BREAK POINT === tablet */
+        @media only screen and (max-width : 900px) {
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'header header header header header header'
+					'nav nav main main main main'
+                    'nav nav main main main main'
+					'nav nav aside aside aside aside'
+                    'footer footer footer footer footer footer';
+            }
+			
+				
+        }
+
+        /*SECOND BREAK POINT === mobile */
+        @media only screen and (max-width : 600px) {
+
+            .grid-container {
+                display: grid;
+                grid-template-areas:
+                    'nav nav nav nav nav nav'
+                    'header header header header header header'
+                    'main main main main main main'
+                    'aside aside aside aside aside aside'
+                    'footer footer footer footer footer footer';
+            }
+
+            nav ul li {
+                display: inline-block;
+            }
+			
+			nav {
+				padding-left: 1.5em;
+			}
+			
+			footer {
+				padding: 0;
+			}
+
+        }
